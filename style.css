@@ -4,3 +4,14 @@
 * {
   margin: 0;
 }
+.row {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.square {
+  height: 50px;
+  width: 50px;
+  background-color: blue;
+}
