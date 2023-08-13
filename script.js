@@ -1,28 +1,20 @@
-function createRow(numberOfSquares) {
+function createGrid(squaresInRow) {
 
-  const container = document.querySelector("#container");
+  const container = document.querySelector('#container');
+  let squareSize = 800 / squaresInRow;
 
-  for(i = 0; i < numberOfSquares; i++) {
-    const row = document.createElement("div");
-    row.classList.add("row");
-    container.appendChild(row);
-
-    for(j = 0; j < numberOfSquares; j++) {
-      const square = document.createElement("div");
-      square.classList.add("square");
-      row.appendChild(square);
-      square.addEventListener("mouseenter", (event) => {
-        event.target.classList.add("gold");
+    for(i = 0; i < squaresInRow * squaresInRow; i++) {
+      const square = document.createElement('div');
+      square.classList.add('square');
+      square.style.width = `${squareSize}px`;
+      square.style.height = `${squareSize}px`;
+      container.appendChild(square);
+      square.addEventListener('mouseenter', (e) => {
+        e.target.classList.add('hover-color');
       });
     }
 
-  }
 }
+createGrid(16);
 
-
-createRow(16);
-
-//  square.addEventListener("mouseenter", function(e) {
-//    e.target.classList.add("gold");
-//  });
 
