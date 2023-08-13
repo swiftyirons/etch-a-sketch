@@ -6,15 +6,12 @@
 }
 #container {
   display: flex;
-  width: 800px;
-  height: 800px;
+  width: 804px;
+  height: 804px;
   flex-wrap: wrap;
+  border: 2px solid red;
+  margin: 20px 0 0 100px;
 }
-
-.square {
-  background-color: blue;
-}
-
 .hover-color {
   background-color: black;
 }

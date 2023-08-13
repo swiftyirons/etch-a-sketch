@@ -1,6 +1,7 @@
+const container = document.querySelector('#container');
+
 function createGrid(squaresInRow) {
 
-  const container = document.querySelector('#container');
   let squareSize = 800 / squaresInRow;
 
     for(i = 0; i < squaresInRow * squaresInRow; i++) {
@@ -15,6 +16,24 @@ function createGrid(squaresInRow) {
     }
 
 }
-createGrid(16);
+
+function setSquaresPerSide() {
+  if (container.hasChildNodes) {
+    removeGrid();
+  }
+  let squaresInRow = prompt('How many squares per side?');
+  createGrid(squaresInRow);
+}
+
+function removeGrid() {
+  while (container.hasChildNodes()) {
+    container.removeChild(container.firstChild);
+  }
+}
+
+document.querySelector('button').addEventListener('click', () => {
+  setSquaresPerSide();
+});
+
 
 
